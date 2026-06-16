@@ -599,6 +599,71 @@ html{
     filter: drop-shadow(0 0 12px rgba(0,217,255,1));
     transform: translateX(-50%) translateY(6px) rotate(45deg);
 }
+.scroll-up{
+    position: absolute;
+    left: 50%;
+    top: 30px;
+
+    width: 50px;
+    height: 50px;
+
+    transform: translateX(-50%);
+    cursor: pointer;
+}
+
+.scroll-up span{
+    position: absolute;
+    top: 0;
+    left: 50%;
+
+    width: 14px;
+    height: 14px;
+
+    border-left: 2px solid #00d9ff;
+    border-top: 2px solid #00d9ff;
+
+    transform: translateX(-50%) rotate(45deg);
+
+    animation: floatUpArrow 1.6s ease-in-out infinite;
+
+    filter: drop-shadow(0 0 8px rgba(0,217,255,0.8));
+}
+
+.scroll-up::after{
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    width: 40px;
+    height: 40px;
+
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+
+    background: radial-gradient(
+        circle,
+        rgba(0,217,255,0.25),
+        transparent 70%
+    );
+
+    animation: pulse 2s infinite;
+}
+
+@keyframes floatUpArrow{
+    0%{
+        transform: translateX(-50%) translateY(0) rotate(45deg);
+        opacity: 0.4;
+    }
+    50%{
+        transform: translateX(-50%) translateY(-10px) rotate(45deg);
+        opacity: 1;
+    }
+    100%{
+        transform: translateX(-50%) translateY(0) rotate(45deg);
+        opacity: 0.4;
+    }
+}
 </style>
 </head>
 
@@ -633,6 +698,9 @@ html{
 <!-- ABOUT -->
 
 <section id="about" class="fade about-section">
+<a href="#home" class="scroll-up">
+    <span></span>
+</a>
     <h2>ABOUT</h2>
     <br>
     <div class="glass about-container">
@@ -666,6 +734,9 @@ html{
 <!-- RELEASES -->
 
 <section id="releases" class="fade releases-section">
+<a href="#about" class="scroll-up">
+  <span></span>
+</a>
 
     <h2>LATEST RELEASES</h2>
 
