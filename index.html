@@ -317,6 +317,40 @@ body::before{
     }
 
 }
+.release-card{
+
+    background:rgba(255,255,255,0.05);
+
+    border:1px solid rgba(0,217,255,0.3);
+
+    border-radius:20px;
+
+    padding:30px;
+
+    margin:20px auto;
+
+    width:60%;
+
+    backdrop-filter:blur(10px);
+
+    transition:0.3s;
+}
+
+.release-card:hover{
+
+    transform:translateY(-5px);
+
+    box-shadow:0 0 25px #00d9ff;
+}
+
+.release-card a{
+
+    color:#00d9ff;
+
+    text-decoration:none;
+
+    font-weight:bold;
+}
 </style>
 </head>
 
@@ -329,7 +363,7 @@ body::before{
     <ul>
         <li><a href="#home">HOME</a></li>
         <li><a href="#about">ABOUT</a></li>
-        <li><a href="#skills">SKILLS</a></li>
+        <li><a href="#releases">RELEASES</a></li>
         <li><a href="#projects">PROJECTS</a></li>
         <li><a href="#contact">CONTACT</a></li>
     </ul>
@@ -372,33 +406,37 @@ body::before{
     </div>
 </section>
 
-<!-- SKILLS -->
+<!-- RELEASES -->
 
-<section id="skills" class="fade">
+<section id="releases" class="fade">
 
-<div class="glass">
+    <h2>Latest Releases</h2>
 
-<h2>Technical Skills</h2>
+    <div class="release-card">
 
-<div class="skill">
-Composing & Arranging
-<div class="bar"><div class="fill" style="width:84%"></div></div>
-</div>
+        <h3>Awake (Celesnica & Akmmer remix)</h3>
 
-<div class="skill">
-Sound Designing
-<div class="bar"><div class="fill" style="width:85%"></div></div>
-</div>
+        <p>Melodic Dubstep / Electronic</p>
 
-<div class="skill">
-Mixing & Mastering
-<div class="bar"><div class="fill" style="width:94%"></div></div>
-</div>
+        <a href="https://soundcloud.com/celesnica/mitis-awake-celesnica-akmmer-remix"
+           target="_blank">
+           Listen on Soundcloud
+        </a>
 
-<div class="skill">
-Label Managing
-<div class="bar"><div class="fill" style="width:80%"></div></div>
-</div>
+    </div>
+
+    <div class="release-card">
+
+        <h3>未眠 (No Sleep) - Celesnica remix</h3>
+
+        <p>Future Garage / Melodic Dubstep</p>
+
+        <a href="https://open.spotify.com/track/1SuVQDDVdU9KUsutHaFImh"
+           target="_blank">
+           Listen on Spotify
+        </a>
+
+    </div>
 
 </div>
 
