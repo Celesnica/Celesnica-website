@@ -828,20 +828,20 @@ window.addEventListener("scroll", () => {
     let current = "";
 
     sections.forEach(section => {
-        const sectionTop = section.offsetTop;
-        const sectionHeight = section.clientHeight;
+        const rect = section.getBoundingClientRect();
 
-        if (scrollY >= sectionTop - sectionHeight / 3) {
-            current = section.getAttribute("id");
+        if (rect.top <= window.innerHeight / 2 &&
+            rect.bottom >= window.innerHeight / 2) {
+            current = section.id;
         }
     });
 
     navLinks.forEach(link => {
         link.classList.remove("active");
 
-        const href = link.getAttribute("href").replace("#", "");
+        const target = link.getAttribute("href").replace("#", "");
 
-        if (href === current) {
+        if (target === current) {
             link.classList.add("active");
         }
     });
