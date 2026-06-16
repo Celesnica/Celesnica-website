@@ -18,6 +18,24 @@ Only gays can see the words at the bottom of the page
 <link href="https://fonts.googleapis.com/css2?family=Anta&family=BBH+Bartle&family=Bruno+Ace+SC&family=Exo+2:ital,wght@0,100..900;1,100..900&family=Shojumaru&family=Sixtyfour:BLED,SCAN@0..100,-53&family=Syncopate:wght@400;700&family=Zen+Dots&display=swap" rel="stylesheet">
 <style>
 
+/* 默认（Home） */
+nav{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    transition: 0.3s ease;
+    padding: 20px 40px;
+    z-index: 1000;
+}
+
+/* 收缩状态 */
+nav.shrink{
+    padding: 10px 40px;
+    backdrop-filter: blur(10px);
+    background: rgba(0,0,0,0.3);
+}
+    
+
 :root{
     --bg:#05070d;
     --glass:rgba(255,255,255,0.06);
@@ -644,7 +662,17 @@ html{
 }
 </style>
 </head>
+<script>
+window.addEventListener("scroll", () => {
+    const nav = document.querySelector("nav");
 
+    if (window.scrollY > window.innerHeight * 0.8) {
+        nav.classList.add("shrink");
+    } else {
+        nav.classList.remove("shrink");
+    }
+});
+</script>
 <body>
 
 <canvas id="particles"></canvas>
