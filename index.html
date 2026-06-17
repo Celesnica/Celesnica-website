@@ -830,55 +830,30 @@ html{
     box-shadow: 0 0 15px #00d9ff;
 
     z-index: 99999;
-}
-#cursor-aura{
+}   
+#cursor-glow{
     position: fixed;
 
-    width: 55px;
-    height: 55px;
+    width: 18px;
+    height: 18px;
+
+    background: white;
 
     border-radius: 50%;
 
-    background: radial-gradient(
-        circle,
-        rgba(255,255,255,0.14) 0%,
-        rgba(255,255,255,0.06) 35%,
-        transparent 75%
-    );
+    filter: blur(10px);
+
+    opacity: 0.18;
 
     pointer-events: none;
     z-index: 10005;
 
     transform: translate(-50%, -50%);
 
-    animation: auraPulse 2.8s ease-in-out infinite;
+    mix-blend-mode: screen;
+
+    transition: opacity 0.15s ease;
 }
-
-@keyframes auraPulse{
-    0%,100%{
-        transform: translate(-50%, -50%) scale(1);
-        opacity: 0.75;
-    }
-
-    50%{
-        transform: translate(-50%, -50%) scale(1.12);
-        opacity: 0.95;
-    }
-}
-
-@keyframes auraPulse{
-    0%,100%{
-        transform: translate(-50%, -50%) scale(1);
-        opacity: 0.85;
-    }
-
-    50%{
-        transform: translate(-50%, -50%) scale(1.08);
-        opacity: 1;
-    }
-}
-</style>
-    
 </head>
 
 <script>
@@ -908,17 +883,16 @@ window.addEventListener("scroll", () => {
 </script>
 <body>
 <div id="progress-bar"></div>
-<div id="cursor-aura"></div>
+<div id="cursor-glow"></div>
 <script>
-const aura = document.getElementById("cursor-aura");
+const glow = document.getElementById("cursor-glow");
 
 document.addEventListener("mousemove",(e)=>{
-
-    aura.style.left = e.clientX + "px";
-    aura.style.top = e.clientY + "px";
-
+    glow.style.left = e.clientX + "px";
+    glow.style.top = e.clientY + "px";
 });
 </script>
+
 <canvas id="particles"></canvas>
 
 <nav>
