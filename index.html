@@ -1146,35 +1146,31 @@ window.addEventListener("scroll", function(){
 </div>
 
 </div>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.min.js"></script>
 
-<script src="https://cdn.jsdelivr.net/npm/vanta/dist/vanta.net.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vanta/dist/vanta.topology.min.js"></script>
 
 <script>
 
 window.addEventListener("load", ()=>{
 
-  VANTA.NET({
+  VANTA.TOPOLOGY({
 
-  el:"#contact",
+    el: "#contact",
 
-  mouseControls:true,
-  touchControls:true,
-  gyroControls:false,
+    mouseControls: true,
+    touchControls: true,
+    gyroControls: false,
 
-  color:0xffffff,
+    minHeight: 200.00,
+    minWidth: 200.00,
 
-  backgroundColor:0x000000,
+    scale: 1.00,
+    scaleMobile: 1.00,
 
-  points:9,          // 不要太多（默认附近）
+    color: 0x7fdfff,           // 冰蓝线条
 
-  spacing:14,        // 比你之前稍微密一点
-
-  maxDistance:22,    // 关键：只小幅增加
-
-  scale:1.0,
-  scaleMobile:1.0
-
+    backgroundColor: 0x030914 // 深海蓝背景
 
   })
 
