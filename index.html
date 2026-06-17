@@ -867,16 +867,7 @@ html{
 </style>
     
 </head>
-<script>
-const aura = document.getElementById("cursor-aura");
 
-document.addEventListener("mousemove",(e)=>{
-
-    aura.style.left = e.clientX + "px";
-    aura.style.top = e.clientY + "px";
-
-});
-</script>
 <script>
 window.addEventListener("scroll", () => {
     let winScroll = document.documentElement.scrollTop;
@@ -905,6 +896,16 @@ window.addEventListener("scroll", () => {
 <body>
 <div id="progress-bar"></div>
 <div id="cursor-aura"></div>
+<script>
+const aura = document.getElementById("cursor-aura");
+
+document.addEventListener("mousemove",(e)=>{
+
+    aura.style.left = e.clientX + "px";
+    aura.style.top = e.clientY + "px";
+
+});
+</script>
 <canvas id="particles"></canvas>
 
 <nav>
