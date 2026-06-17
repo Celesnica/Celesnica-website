@@ -818,9 +818,35 @@ html{
 .scroll-up{
     z-index: 9999;
 }
+#progress-bar{
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 0%;
+    height: 3px;
+
+    background: #00d9ff;
+    box-shadow: 0 0 15px #00d9ff;
+
+    z-index: 99999;
+}
 </style>
     
 </head>
+<script>
+window.addEventListener("scroll", () => {
+    let winScroll = document.documentElement.scrollTop;
+    let height =
+      document.documentElement.scrollHeight -
+      document.documentElement.clientHeight;
+
+    let scrolled = (winScroll / height) * 100;
+
+    document.getElementById("progress-bar").style.width =
+      scrolled + "%";
+});
+</script>
 
 <script>
 window.addEventListener("scroll", () => {
@@ -834,6 +860,7 @@ window.addEventListener("scroll", () => {
 });
 </script>
 <body>
+<div id="progress-bar"></div>
 
 <canvas id="particles"></canvas>
 
