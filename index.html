@@ -211,6 +211,15 @@ section{
     grid-template-columns:1fr 1fr;
     gap:40px;
 }
+
+/* 小屏幕自动改单列 */
+@media (max-width: 900px){
+
+    .about-container{
+        grid-template-columns:1fr;
+    }
+
+}
 .about-container h3{
     font-family: 'Chillax', sans-serif;
     font-weight:600;
@@ -220,10 +229,13 @@ section{
     font-weight:300;
 }
 .profile-pic{
-    width: 450px;
-    height: 287px;
-    object-fit: cover;
+    width:100%;
+    max-width:450px;
 
+    height:auto;
+    aspect-ratio:450/287;
+
+    object-fit:cover;
     border-radius: 20px;
     border: 2px solid #00d9ff;
     box-shadow: 0 0 25px rgba(0,217,255,0.3);
