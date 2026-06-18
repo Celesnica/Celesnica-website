@@ -1141,7 +1141,7 @@ window.addEventListener("load", () => {
 
     const bar = document.getElementById("progress-bar");
 
-    window.addEventListener("scroll", () => {
+    function update() {
 
         let winScroll = document.documentElement.scrollTop;
 
@@ -1152,9 +1152,11 @@ window.addEventListener("load", () => {
         let scrolled = (winScroll / height) * 100;
 
         bar.style.width = scrolled + "%";
+    }
 
-    });
+    window.addEventListener("scroll", update);
 
+    update(); // ⭐⭐⭐ 就是缺这个
 });
 </script>
 
