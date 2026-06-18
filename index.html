@@ -1088,6 +1088,41 @@ document.getElementById("enterBtn").addEventListener("click", function () {
 });
 </script>
 
+<audio id="bgMusic" loop preload="auto">
+  <source src="You Don't Want Me.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+document.getElementById("enterBtn").addEventListener("click", () => {
+
+    const music = document.getElementById("bgMusic");
+
+    // 初始静音
+    music.volume = 0;
+
+    // 开始播放
+    music.play().catch(err => console.log(err));
+
+    // 音量渐进
+    let volume = 0;
+    const targetVolume = 0.25; // 最终25%
+
+    const fadeIn = setInterval(() => {
+
+        volume += 0.01;
+
+        if (volume >= targetVolume) {
+            volume = targetVolume;
+            clearInterval(fadeIn);
+        }
+
+        music.volume = volume;
+
+    }, 150); // 每150ms增加1%
+
+});
+</script>
+
 <div id="progress-bar"></div>
 <div id="cursor-glow"></div>
 <script>
