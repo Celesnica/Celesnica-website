@@ -24,7 +24,43 @@ WEBSITE DESIGNED BY CELESNICA
 <link href="https://api.fontshare.com/v2/css?f[]=chillax@300,600&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Anta&family=BBH+Bartle&family=Bruno+Ace+SC&family=Exo+2:ital,wght@0,100..900;1,100..900&family=Shojumaru&family=Sixtyfour:BLED,SCAN@0..100,-53&family=Syncopate:wght@400;700&family=Zen+Dots&display=swap" rel="stylesheet">
 <style>
+#main {
+  filter: blur(10px);
+  transition: filter 0.8s ease;
+}
 
+/* 全屏遮罩 */
+#preloader {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  backdrop-filter: blur(12px); /* ⭐核心模糊效果 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+/* 按钮区域 */
+.enter-box {
+  text-align: center;
+  color: white;
+}
+
+#enterBtn {
+  padding: 12px 24px;
+  font-size: 18px;
+  border: 1px solid white;
+  background: transparent;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#enterBtn:hover {
+  background: white;
+  color: black;
+}
 /* 默认（Home） */
 nav{
     position: fixed;
@@ -1022,6 +1058,26 @@ window.addEventListener("scroll", () => {
 });
 </script>
 <body>
+<div id="preloader">
+  <div class="enter-box">
+    <h1>WELCOME</h1>
+    <button id="enterBtn">ENTER</button>
+  </div>
+</div>
+
+<div id="main">
+  <!-- 你的Vanta背景 / 网站内容 -->
+  <h1>Home Page</h1>
+</div>
+<script>
+document.getElementById("enterBtn").addEventListener("click", function () {
+  document.getElementById("preloader").style.opacity = "0";
+  document.getElementById("preloader").style.pointerEvents = "none";
+
+  document.getElementById("main").style.filter = "blur(0px)";
+});
+</script>
+
 <div id="progress-bar"></div>
 <div id="cursor-glow"></div>
 <script>
